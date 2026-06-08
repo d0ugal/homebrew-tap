@@ -5,21 +5,21 @@
 class Graith < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/d0ugal/graith"
-  version "0.6.0"
+  version "0.6.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d0ugal/graith/releases/download/v0.6.0/graith_0.6.0_darwin_amd64.tar.gz"
-      sha256 "d1999654e12b8531b3500f01ef3f32e25c2783edfdc0102ff19a486bc2309b31"
+      url "https://github.com/d0ugal/graith/releases/download/v0.6.1/graith_0.6.1_darwin_amd64.tar.gz"
+      sha256 "0ba82e374107f5fa682f679358a2e0cdd062faf4ec210fdc266b02c6f7534a97"
 
       define_method(:install) do
         bin.install "gr"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d0ugal/graith/releases/download/v0.6.0/graith_0.6.0_darwin_arm64.tar.gz"
-      sha256 "6e2182be9ee7593c362600d5c412c60aa797f7b9c460b1f2b91d2809aa10ce94"
+      url "https://github.com/d0ugal/graith/releases/download/v0.6.1/graith_0.6.1_darwin_arm64.tar.gz"
+      sha256 "e9123b132bcfb6127e02d8bb1395fc49a444eaca89f3f37db21d8d89745575d2"
 
       define_method(:install) do
         bin.install "gr"
@@ -29,15 +29,15 @@ class Graith < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.6.0/graith_0.6.0_linux_amd64.tar.gz"
-      sha256 "33c5ab85f6754eb5223c2f1990145c4c32d28a5d1033e13ef9b603a3532efa47"
+      url "https://github.com/d0ugal/graith/releases/download/v0.6.1/graith_0.6.1_linux_amd64.tar.gz"
+      sha256 "cb0d935c2a8fca7b7d481128b5205ed42028c294403229324b795b6a2a21446f"
       define_method(:install) do
         bin.install "gr"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.6.0/graith_0.6.0_linux_arm64.tar.gz"
-      sha256 "d41b039f77bb9b668df857ce515a2f01027c01a09831e0834eb93e9d83d84b21"
+      url "https://github.com/d0ugal/graith/releases/download/v0.6.1/graith_0.6.1_linux_arm64.tar.gz"
+      sha256 "75fe2c0c070ad4c30e6fff1f3f39671744e0a7720d9d2dd7866a3c95c407b599"
       define_method(:install) do
         bin.install "gr"
       end
