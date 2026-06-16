@@ -5,21 +5,21 @@
 class Graith < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/d0ugal/graith"
-  version "0.37.0"
+  version "0.38.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d0ugal/graith/releases/download/v0.37.0/graith_0.37.0_darwin_amd64.tar.gz"
-      sha256 "35ce466d99a92ddc98517bb973b9a5056541314912881e62006687a948d65d59"
+      url "https://github.com/d0ugal/graith/releases/download/v0.38.0/graith_0.38.0_darwin_amd64.tar.gz"
+      sha256 "dd25fe28577d858a1ce2ede1bd72fc04763bb044147c6ca314c5080065822600"
 
       define_method(:install) do
         bin.install "gr"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d0ugal/graith/releases/download/v0.37.0/graith_0.37.0_darwin_arm64.tar.gz"
-      sha256 "8b19698af0aff5a31d0ff83a7de6560303866c879dd956ea8824522b2b74cb3d"
+      url "https://github.com/d0ugal/graith/releases/download/v0.38.0/graith_0.38.0_darwin_arm64.tar.gz"
+      sha256 "0b1a1d5ac5ee28c7c111e582e2d8a190d5717ba650e33af16443dd8553b90e72"
 
       define_method(:install) do
         bin.install "gr"
@@ -29,15 +29,15 @@ class Graith < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.37.0/graith_0.37.0_linux_amd64.tar.gz"
-      sha256 "c24ddb954e0ec63f9430c425dd2d0a2d37a9a82b3e6ccad18671db2144e71e8a"
+      url "https://github.com/d0ugal/graith/releases/download/v0.38.0/graith_0.38.0_linux_amd64.tar.gz"
+      sha256 "d5e600eb52fb435d27059411e7432725c2972b07d246ec076446f9418ced8b32"
       define_method(:install) do
         bin.install "gr"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.37.0/graith_0.37.0_linux_arm64.tar.gz"
-      sha256 "3a1e4f3a24ccca52e4f40c9ec917515d7176ca341b9c75c32b9c65ce620efd21"
+      url "https://github.com/d0ugal/graith/releases/download/v0.38.0/graith_0.38.0_linux_arm64.tar.gz"
+      sha256 "8002cb33313f9ac0d6001798017b72005d15eb99cb954d73956c800b61e7a1dc"
       define_method(:install) do
         bin.install "gr"
       end
