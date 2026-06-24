@@ -11,22 +11,22 @@ class GraithDev < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_darwin_amd64.tar.gz"
-      sha256 "de93f82fe1236b055db537582bf8139829e7e0d3aaaefecbf5f51cd002427e15"
+      sha256 "d780d2f50e6fc83bea31ab8d906637dd691314a90502a32ce5a1a1e3cdcb157d"
     end
     if Hardware::CPU.arm?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_darwin_arm64.tar.gz"
-      sha256 "4eded8372fc05f43e9a2ad72652ad0aa8295479e315c219098e0ea71715ea9fc"
+      sha256 "e8fea5ae15cd659c64608e295ffd66aa7452a77af95bd0aabec058bf1d018f23"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_amd64.tar.gz"
-      sha256 "c59daa1b441b0333dfedfc3e89d134cfe192521b03f31785fdcdf56a87557d6b"
+      sha256 "1d41fdfc51cd456b0e7d6d19b760e1332c434bcc614f942f2743a0e0a79f0b59"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_arm64.tar.gz"
-      sha256 "c2f25f71f3e9cafd2d6b5b10b676881f45290fed512bac96642f465196dbb9ff"
+      sha256 "f5bb41b8f233946ce9371996db2e8b798a45f685145b375c6ff555977b86da28"
     end
   end
 
