@@ -5,41 +5,77 @@
 class Graith < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/d0ugal/graith"
-  version "0.67.6"
+  version "0.67.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d0ugal/graith/releases/download/v0.67.6/graith_0.67.6_darwin_amd64.tar.gz"
-      sha256 "0c43d1ba53822870f71e93cc9618c3b2153a1fd5bdea5c877c078121a2d4784a"
+      url "https://github.com/d0ugal/graith/releases/download/v0.67.7/graith_0.67.7_darwin_amd64.tar.gz"
+      sha256 "caaafa5b820eb878e0ee49f8d5f20aee3efbd47bfb29d309fd0360375ca2b36c"
 
       define_method(:install) do
         bin.install "gr"
+        # Install the macOS notification helper so `gr notify` appears under
+        # "Graith" in System Settings > Notifications (issue #1094/#1101). It lands
+        # in libexec/graith, one of the locations the daemon's findMacNotifierApp
+        # searches relative to the resolved gr binary. Guarded with `if OS.mac?`
+        # (not the `on_macos` DSL, which the Homebrew Cookbook says not to use
+        # inside `def install`) — the Linux archive doesn't carry the bundle.
+        if OS.mac?
+          (libexec/"graith").install "GraithNotifier.app"
+        end
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d0ugal/graith/releases/download/v0.67.6/graith_0.67.6_darwin_arm64.tar.gz"
-      sha256 "33c6f437f3c7b7652e5a5ee07eaf528b9be0725a4b179fd7963f4c54c6107871"
+      url "https://github.com/d0ugal/graith/releases/download/v0.67.7/graith_0.67.7_darwin_arm64.tar.gz"
+      sha256 "8358939d83a51d98f6a29e69234e2b2297127c4492b5952ba72d05451c51dc10"
 
       define_method(:install) do
         bin.install "gr"
+        # Install the macOS notification helper so `gr notify` appears under
+        # "Graith" in System Settings > Notifications (issue #1094/#1101). It lands
+        # in libexec/graith, one of the locations the daemon's findMacNotifierApp
+        # searches relative to the resolved gr binary. Guarded with `if OS.mac?`
+        # (not the `on_macos` DSL, which the Homebrew Cookbook says not to use
+        # inside `def install`) — the Linux archive doesn't carry the bundle.
+        if OS.mac?
+          (libexec/"graith").install "GraithNotifier.app"
+        end
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.67.6/graith_0.67.6_linux_amd64.tar.gz"
-      sha256 "d3399b570a383c427257ddbee9d06739f98297e77ba686086ca75661b5cfa934"
+      url "https://github.com/d0ugal/graith/releases/download/v0.67.7/graith_0.67.7_linux_amd64.tar.gz"
+      sha256 "a3a431e319c0266b818f0ec83a2d109c3431aafa129c551da58d87fb5495dd15"
       define_method(:install) do
         bin.install "gr"
+        # Install the macOS notification helper so `gr notify` appears under
+        # "Graith" in System Settings > Notifications (issue #1094/#1101). It lands
+        # in libexec/graith, one of the locations the daemon's findMacNotifierApp
+        # searches relative to the resolved gr binary. Guarded with `if OS.mac?`
+        # (not the `on_macos` DSL, which the Homebrew Cookbook says not to use
+        # inside `def install`) — the Linux archive doesn't carry the bundle.
+        if OS.mac?
+          (libexec/"graith").install "GraithNotifier.app"
+        end
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.67.6/graith_0.67.6_linux_arm64.tar.gz"
-      sha256 "b408186103f2246932e0dfc00978f23e717e8e902cbfa6387270ad4ce252089b"
+      url "https://github.com/d0ugal/graith/releases/download/v0.67.7/graith_0.67.7_linux_arm64.tar.gz"
+      sha256 "7b210306cece38492df4d08f521daed01c2c0363858b97432c97361b81bca731"
       define_method(:install) do
         bin.install "gr"
+        # Install the macOS notification helper so `gr notify` appears under
+        # "Graith" in System Settings > Notifications (issue #1094/#1101). It lands
+        # in libexec/graith, one of the locations the daemon's findMacNotifierApp
+        # searches relative to the resolved gr binary. Guarded with `if OS.mac?`
+        # (not the `on_macos` DSL, which the Homebrew Cookbook says not to use
+        # inside `def install`) — the Linux archive doesn't carry the bundle.
+        if OS.mac?
+          (libexec/"graith").install "GraithNotifier.app"
+        end
       end
     end
   end
