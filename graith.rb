@@ -5,13 +5,13 @@
 class Graith < Formula
   desc "Terminal session manager for AI coding agents"
   homepage "https://github.com/d0ugal/graith"
-  version "0.68.4"
+  version "0.68.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/d0ugal/graith/releases/download/v0.68.4/graith_0.68.4_darwin_amd64.tar.gz"
-      sha256 "ac84feff1f04df84ffdb7541dc350c271a192013b06bd05cdb1a1722b3da0f89"
+      url "https://github.com/d0ugal/graith/releases/download/v0.68.5/graith_0.68.5_darwin_amd64.tar.gz"
+      sha256 "8ef55285ceb0ea245afd6ec13f79dc6b0e5ad04306017d5ea90b82b478593e0b"
 
       define_method(:install) do
         bin.install "gr"
@@ -27,8 +27,8 @@ class Graith < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/d0ugal/graith/releases/download/v0.68.4/graith_0.68.4_darwin_arm64.tar.gz"
-      sha256 "9b1610a926108a33fc70cb447a88430813ed2ba445b1b955ab8d8f3ffa44adc9"
+      url "https://github.com/d0ugal/graith/releases/download/v0.68.5/graith_0.68.5_darwin_arm64.tar.gz"
+      sha256 "6feead8f6102dc64a874219d2714d4817eeacd22d4d4414ab1d3eebcb99a7507"
 
       define_method(:install) do
         bin.install "gr"
@@ -47,8 +47,8 @@ class Graith < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.68.4/graith_0.68.4_linux_amd64.tar.gz"
-      sha256 "a7ee1cbdb96e802af54cbd21777b5c0aa6ce031cab645b6c06698c500654c858"
+      url "https://github.com/d0ugal/graith/releases/download/v0.68.5/graith_0.68.5_linux_amd64.tar.gz"
+      sha256 "8b3ed9cb02de533994f3c40abf124ef774c136ddd27c5ab08ca5dcb1b7302b26"
       define_method(:install) do
         bin.install "gr"
         # Install the macOS notification helper so `gr notify` appears under
@@ -63,8 +63,8 @@ class Graith < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/d0ugal/graith/releases/download/v0.68.4/graith_0.68.4_linux_arm64.tar.gz"
-      sha256 "8bdf3701685e33940a4eaa7aeb7474cc6f7f1de43a431750c7801bd730c5635f"
+      url "https://github.com/d0ugal/graith/releases/download/v0.68.5/graith_0.68.5_linux_arm64.tar.gz"
+      sha256 "70ff4db4ac87ff1f4982add7000bdebffcbf07dc5442ed4c80b7503489952bf7"
       define_method(:install) do
         bin.install "gr"
         # Install the macOS notification helper so `gr notify` appears under
