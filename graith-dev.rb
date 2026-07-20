@@ -5,28 +5,28 @@
 class GraithDev < Formula
   desc "Terminal session manager for AI coding agents (dev build)"
   homepage "https://github.com/d0ugal/graith"
-  version "0.69.7-dev.1784549509"
+  version "0.69.7-dev.1784562103"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_darwin_amd64.tar.gz"
-      sha256 "caa4b191698386ec6c590217d4fcd7d54bbaa66bafa0eeb669cceb644b94e79f"
+      sha256 "89587c2c3ab24b27ab929c49a78930abe397d661615029c949a4786379f33b35"
     end
     if Hardware::CPU.arm?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_darwin_arm64.tar.gz"
-      sha256 "a79430ce61ab340db65a2c6245700ef772118e812de523c7fea9b804735b58ab"
+      sha256 "e3285abf4ac6dd0e05a5758043fc7ed814fad6fd63962f075f3099cec24acad8"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_amd64.tar.gz"
-      sha256 "4a71ae93d15b9bd6d33d2be126c7f3c4ac4c0c4f26b8077758ee4efb855bed02"
+      sha256 "117d15d4c2a1b8495cc33153bd3c4294524f3736bfc3155e7ecb0beff90e8d9d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_arm64.tar.gz"
-      sha256 "6e08dd502e7f03c1ad58457f454d588e609043a942211df5e97a36aa4bcb7278"
+      sha256 "3304bd0c59f1a0d3b08de99cb1d6de2db7147868327258ddd61efd2fe97857fc"
     end
   end
 
@@ -34,6 +34,21 @@ class GraithDev < Formula
     bin.install "gr-dev"
     if OS.mac?
       (libexec/"graith").install "GraithNotifier.app"
+      if (buildpath/"Graith.app").directory?
+        (libexec/"graith").install "Graith.app"
+      end
     end
+  end
+
+  def caveats
+    return unless (libexec/"graith/Graith.app").directory?
+
+    <<~EOS
+      To restart the graith-dev daemon after upgrading:
+        gr-dev daemon restart
+
+      Before uninstalling on macOS, remove its registered user service:
+        gr-dev daemon service remove
+    EOS
   end
 end
