@@ -5,13 +5,13 @@
 class GraithDev < Formula
   desc "Terminal session manager for AI coding agents (dev build)"
   homepage "https://github.com/d0ugal/graith"
-  version "0.70.1-dev.1784835857"
+  version "0.70.1-dev.1784836440"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_darwin_arm64.tar.gz"
-      sha256 "9c8620b57554e36e00a1e0e9e6969047b28b53a73e9ab294a4a3d893322c456a"
+      sha256 "aec100aaf0db8d2e40704309e9d0353b69e6bf6d9b1ca3861836868f14d4211b"
     else
       odie "graith-dev supports only Apple Silicon on macOS"
     end
@@ -20,10 +20,10 @@ class GraithDev < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_amd64.tar.gz"
-      sha256 "23245120929498da6b1042094c9dbe33537388f1a4865f9955f98cd151829c0e"
+      sha256 "577f6de904a1aee2c62af35ff89e5c0f6e59d29ac2ed244d1a4716a1688a38ae"
     elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/d0ugal/graith/releases/download/dev/graith-dev_linux_arm64.tar.gz"
-      sha256 "5d3bdef96fddc642431f0d11829d8e16874313249a66fd3b9f43a98f8a8dd728"
+      sha256 "ea83a9354d8a403d0d6f5d55c86a16cf071e9f4754a62ba4c4e20c4e67c23198"
     else
       odie "graith-dev supports only Linux amd64/arm64"
     end
